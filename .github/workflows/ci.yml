@@ -18,6 +18,11 @@ jobs:
       - run: pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build
       - run: pnpm --filter web exec playwright install --with-deps chromium
       - run: pnpm e2e
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scope-playwright
+          path: apps/web/test-results
   python:
     runs-on: ubuntu-latest
     steps:

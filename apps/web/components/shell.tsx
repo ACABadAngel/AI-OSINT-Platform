@@ -33,6 +33,7 @@ export type SearchItem = {
   terms?: string;
 };
 type ShellProps = {
+  workspaceName?: string;
   children: ReactNode;
   items?: SearchItem[];
   cases?: SearchItem[];
@@ -43,6 +44,7 @@ type ShellProps = {
 
 export function Shell({
   children,
+  workspaceName = "Demo Workspace",
   items = [],
   cases = [],
   caseHref,
@@ -114,10 +116,10 @@ export function Shell({
               className="workspace-button"
               onClick={() => setDialog("cases")}
             >
-              Demo Workspace <ChevronDown size={14} />
+              {workspaceName} <ChevronDown size={14} />
             </Button>
           ) : (
-            <span className="workspace-label">Demo Workspace</span>
+            <span className="workspace-label">{workspaceName}</span>
           )}
           <DemoBadge />
           <div className="top-spacer" />
