@@ -1,0 +1,21 @@
+[project]
+name = "scope-services"
+version = "0.0.0"
+requires-python = ">=3.12"
+dependencies = ["fastapi", "uvicorn", "pydantic", "sqlalchemy", "alembic", "psycopg[binary]", "celery[redis]"]
+
+[dependency-groups]
+dev = ["ruff", "mypy", "pytest", "httpx"]
+
+[tool.pytest.ini_options]
+pythonpath = ["apps/api", "apps/worker"]
+testpaths = ["apps/api/tests"]
+
+[tool.mypy]
+strict = true
+mypy_path = ["apps/api", "apps/worker"]
+explicit_package_bases = true
+
+[[tool.mypy.overrides]]
+module = ["celery"]
+ignore_missing_imports = true

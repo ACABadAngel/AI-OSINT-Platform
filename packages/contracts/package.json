@@ -1,0 +1,10 @@
+{
+  "name": "@scope/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": "./index.ts",
+  "dependencies": {
+    "zod": "latest"
+  }
+}

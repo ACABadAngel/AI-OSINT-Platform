@@ -1,0 +1,41 @@
+{
+  "name": "web",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "next build",
+    "e2e": "playwright test"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "latest",
+    "@tailwindcss/postcss": "latest",
+    "lucide-react": "latest",
+    "radix-ui": "latest",
+    "clsx": "latest",
+    "class-variance-authority": "latest",
+    "tailwind-merge": "latest",
+    "geist": "latest",
+    "@tanstack/react-query": "latest",
+    "@xyflow/react": "13.0.2",
+    "@scope/contracts": "workspace:*",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "vitest": "latest",
+    "@playwright/test": "latest",
+    "@axe-core/playwright": "latest"
+  }
+}
