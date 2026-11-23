@@ -1,0 +1,10 @@
+.next
+pnpm-lock.yaml
+uv.lock
+docs
+tasks
+decisions
+examples
+prompts
+AGENTS.md
+next-env.d.ts

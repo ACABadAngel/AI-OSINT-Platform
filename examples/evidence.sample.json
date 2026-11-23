@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "id": "00000000-0000-4000-8000-000000000011",
+  "case_id": "00000000-0000-4000-8000-000000000001",
+  "demo": true,
+  "source": {
+    "connector": "fixtures",
+    "url": "https://aurora.example/news/demo-launch",
+    "title": "Aurora Systems announces a fictional product",
+    "retrieved_at": "2026-11-23T10:00:00Z",
+    "published_at": "2026-11-20T12:00:00Z",
+    "sha256": null,
+    "archival_permission": "fixture_only"
+  },
+  "observations": [
+    {
+      "id": "00000000-0000-4000-8000-000000000012",
+      "subject": {"type": "organization", "name": "Aurora Systems"},
+      "predicate": "published_announcement",
+      "value": "Fictional product launch announcement",
+      "support_excerpt": "Aurora Systems today announced...",
+      "review_status": "proposed"
+    }
+  ]
+}
