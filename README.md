@@ -1,6 +1,6 @@
 # SCOPE — Source-Cited OSINT & Public Evidence
 
-**Status:** implementation blueprint (not a functioning application). **Working name:** SCOPE; rename freely.
+**Status:** M0 fixture-backed frontend and development services. The roadmap describes the later persisted and live-source milestones.
 
 SCOPE is a modular, AI-assisted workspace for legitimate, public-source investigations focused on organizations, domains, publicly documented technical assets, public repositories, and research documents. It connects evidence to citations, represents relationships explicitly, and generates reviewable reports. It is **not** an autonomous intrusion, stalking, or personal-profiling system.
 
@@ -65,3 +65,13 @@ Use Node.js 24, pnpm 11 and (for Python services) Python 3.12 and uv.
 - Run `docker compose -f infra/compose.yaml up --build` for the development stack. The API health check is at `http://localhost:8000/health/live`.
 - Run `pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build`. Install browsers with `pnpm --filter web exec playwright install chromium`, then run `pnpm e2e`.
 - Run `uv sync --locked`, followed by `uv run ruff check apps`, `uv run ruff format --check apps`, `uv run mypy apps/api apps/worker`, and `uv run pytest`.
+
+## Try the demo workspace
+
+Open Aurora Systems and select **Graph**. Select **Identifies official domain**, then open citation **SRC-002**. In the evidence inbox, open the source record or add the approved source to the report. The report studio previews Markdown and exports Markdown or JSON with a frozen source manifest.
+
+Use **New case** to create a local case with a fictional `.example` domain. The sidebar-free workspace includes case search, evidence review, timeline, graph proposals, a source catalog, and settings. Reviews, drafts, proposals, and research runs are retained in this browser. Settings can restore the original fixtures.
+
+The research assistant runs a deterministic case-local evidence matcher after you approve a plan. It supports a simulated adapter error, explicit retry and cancellation. Source records and their URL metadata are fictional. The demo executes zero external collection requests.
+
+CI captures desktop and mobile dashboard, graph, source, report, research-plan, and keyboard-focus screenshots with Playwright. Production authentication, durable server-backed storage, live source collection, model providers, and PDF exports are tracked in later roadmap milestones.
